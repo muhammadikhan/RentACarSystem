@@ -1,0 +1,109 @@
+﻿@model IEnumerable<RCS_WebAPI.Models.OrderModel>
+
+<div class="row">
+    <div class="col-md-12">
+        <br />
+        <br />
+        <table class="table" id="myTable">
+            <thead>
+                <tr>
+                    <th>
+                        Order Number
+                    </th>
+                    <th>
+                        Booking Date
+                    </th>
+                    <th>
+                        Car
+                    </th>
+                    <th>
+                        From
+                    </th>
+                    <th>
+                        To
+                    </th>
+                    <th>
+                        Booking Type
+                    </th>
+                    <th>
+                        Rate
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Customer
+                    </th>
+                    <th>
+                        Shop (Showroom or Driver)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.order.Id
+                        </td>
+                        <td>
+                            @item.order.BookingDateTime
+                        </td>
+                        <td>
+                            @item.order.Car
+                        </td>
+                        <td>
+                            @item.order.LocationFrom
+                        </td>
+                        <td>
+                            @item.order.LocationTo
+                        </td>
+                        <td>
+                            @item.order.BookingType
+                        </td>
+                        <td>
+                            @item.order.BookingRate
+                        </td>
+                        <td>
+                            @item.order.Status
+                        </td>
+
+                        <td>
+                            @if (item.customer_userLogin == null)
+                            {
+                                <div style="color:red; font-style:italic;">
+                                    No Customer
+                                </div>
+                            }
+                            else
+                            {
+                                <div style="color:green; font-style:italic;">
+                                    @item.customer_userLogin.FirstName &nbsp; @item.customer_userLogin.LastName
+                                    <br />
+                                    @item.customer_userLogin.Mobile&nbsp;@item.customer_userLogin.Landline
+                                </div>
+                            }
+                        </td>
+
+                        <td>
+                            <div style="color:blue; font-weight:bolder;">
+                                @item.driver_userLogin.FirstName &nbsp; @item.driver_userLogin.LastName
+                                <br />
+                                @item.driver_userLogin.Mobile&nbsp;@item.driver_userLogin.Landline
+                            </div>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //jQuery.noConflict();
+    $(document).ready(function () {
+        $('#myTable').DataTable();
+        //swal("Please wait...", "User Registration is in process.", "warning");
+    });
+</script>

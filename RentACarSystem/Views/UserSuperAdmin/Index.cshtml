@@ -1,0 +1,190 @@
+﻿<link href="~/css/navMenu.css" rel="stylesheet" id="navMenu-css">
+
+<div class="container-fluid-short-custom">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-3">
+                    <nav class="navbar navbar sidebar" role="navigation">
+                        <div class="container-fluid">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <h3>Administrator Dashboard</h3>
+                                <div class="div-bottom-border"></div>
+                                <a class="navbar-brand" onclick="loadPartialView('Dashboard','Dashboard')">WELCOME, @ViewData["Name"]</a>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                        <a style="cursor:pointer;" onclick="loadPartialView('OrdersList','OrdersList')">
+                                            Orders List
+                                            <span style="margin-right: 10px;font-size:18px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tasks"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a style="cursor:pointer;" onclick="loadPartialView('UsersList','UsersList')">
+                                            Users List
+                                            <span style='margin-right: 10px;font-size:18px;' class='pull-right hidden-xs showopacity glyphicon glyphicon-user'></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a style="cursor:pointer;" onclick="loadPartialView('Profile','Profile')">
+                                            Profile
+                                            <span style="margin-right: 10px;font-size:18px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-briefcase"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a style="cursor:pointer;" onclick="loadPartialView('ChangePassword','../SignInSignUp/ChangePassword?view_type=PARTIAL')">
+                                            Change Password
+                                            <span style="margin-right: 10px;font-size:18px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-edit"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../SignInSignUp/SignOut">
+                                            SignOut
+                                            <span style="margin-right: 10px;font-size:18px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-log-out"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="col-md-9">
+                    <div id="Dashboard">
+                        <link href="~/css/navMenu.css" rel="stylesheet" id="navMenu-css">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12" style="background-image: url('https://banner2.cleanpng.com/20180715/ffk/kisspng-web-development-web-page-responsive-web-design-website-under-construction-5b4c0f86643e55.8330298515317113664107.jpg'); background-size: 900px; height: 350px;" ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="OrdersList">
+                    </div>
+                    <div id="UsersList">
+                    </div>
+                    <div id="Profile">
+                    </div>
+                    <div id="ChangePassword">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    function htmlbodyHeightUpdate() {
+        var height3 = $(window).height()
+        var height1 = $('.nav').height() + 50
+        height2 = $('.main').height()
+        if (height2 > height3) {
+            $('html').height(Math.max(height1, height3, height2) + 10);
+            $('body').height(Math.max(height1, height3, height2) + 10);
+        }
+        else {
+            $('html').height(Math.max(height1, height3, height2));
+            $('body').height(Math.max(height1, height3, height2));
+        }
+
+    }
+    $(document).ready(function () {
+        htmlbodyHeightUpdate()
+        $(window).resize(function () {
+            htmlbodyHeightUpdate()
+        });
+        $(window).scroll(function () {
+            height2 = $('.main').height()
+            htmlbodyHeightUpdate()
+        });
+
+        loadPartialView('Dashboard', 'Dashboard');
+
+    });
+
+    function loadPartialView(DivId, _URL) {
+        try {
+
+            $('#Dashboard').html("");
+            $('#OrdersList').html("");
+            $('#UsersList').html("");
+            $('#Profile').html("");
+            $('#ChangePassword').html("");
+            setTimeout('', 3000);
+            $('#' + DivId).addClass("loader");
+
+            _URL = "../UserSuperAdmin/" + _URL;
+            console.log(_URL);
+            //debugger;
+            //alert(DivId);
+            //alert(_URL);
+
+            $.ajax({
+                type: "GET",
+                url: _URL,
+                contentType: "application/json;",
+                success: function (result) {
+                    //debugger;
+                    //alert('.O.K.');
+                    $('#' + DivId).removeClass("loader");
+                    $('#' + DivId).html(result);
+                    //setTimeout(location.reload.bind(location), 2000);
+                },
+                error: function (result) {
+                    alert('Unable to load page.');
+                    $('#' + DivId).removeClass("loader");
+                    $('#' + DivId).html(result);
+                }
+            });
+
+        } catch (e) {
+            console.writeline(e);
+            location.reload();
+        }
+    }
+
+</script>
+
+<style>
+    .loader {
+        border: 8px dotted white;
+        border-radius: 50%;
+        border-top: 8px dotted lightorange;
+        border-bottom: 8px dotted lightblue;
+        width: 150px;
+        height: 150px;
+        -webkit-animation: spin 1s linear infinite;
+        animation: spin 2s linear infinite;
+        margin: 100px auto;
+    }
+
+    @@-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    @@keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>

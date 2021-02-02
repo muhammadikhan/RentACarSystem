@@ -1,0 +1,54 @@
+﻿<div class="container-fluid-custom">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <h2></h2>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                    <h3 class="text-center">
+                        Sign Up Verification
+                    </h3>
+                    <div class="div-bottom-border">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                    <form action="/SignInSignUp/VerifySignUp" method="post" role="form" name="LoginForm">
+                        <div class="form-group">
+                            <label class="Message label-margin" style="color:blue;">
+                                @ViewData["Message"]
+                                @{ViewData["Message"] = "";}
+                            </label>
+                        </div>
+                        <div class="form-group div-top-border">
+                            <label class="label-margin" for="LoginEmail">
+                                Email Address
+                            </label>
+                            <input required="" type="email" class="form-control" id="Email" name="Email" />
+                        </div>
+                        <div class="form-group">
+                            <label class="label-margin" for="LoginPassword">
+                                Mobile
+                            </label>
+                            <input required="" type="tel" class="form-control" id="Mobile" name="Mobile" />
+                        </div>
+                        <button type="submit" class="btn btn-success">
+                            Generate New OTP
+                        </button>
+                    </form>
+
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

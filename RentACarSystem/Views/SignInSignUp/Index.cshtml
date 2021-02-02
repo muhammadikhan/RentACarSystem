@@ -1,0 +1,142 @@
+﻿<div class="container-fluid-short-custom">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <h2></h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                    <h3 class="text-center">
+                        LOGIN / REGISTER
+                    </h3>
+                    <div class="div-bottom-border">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+
+            @{
+                if (ViewData["Message"] != null)
+                {
+                    <div class="row">
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-8">
+                            <label class="Message label-margin" style="color:blue;">
+                                @ViewData["Message"]
+
+                            </label>
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                    </div>
+                    ViewData["Message"] = null;
+                }
+            }
+            <div class="row">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-4">
+                    <form action="/SignInSignUp/SignIn" method="post" role="form" name="LoginForm">
+                        @{
+                            if (ViewData["LoginMessage"] != null)
+                            {<div class="form-group">
+                                    <label class="Message label-margin" style="color:blue;">
+                                        @ViewData["LoginMessage"]
+
+                                    </label>
+                                </div>
+                                ViewData["LoginMessage"] = null;
+                            }
+                        }
+                        <div class="form-group div-top-border">
+                            <label class="label-margin" for="LoginEmail">
+                                Email Address
+                            </label>
+                            <input required="" type="email" class="form-control" id="LoginEmail" name="LoginEmail" />
+                        </div>
+                        <div class="form-group">
+                            <label class="label-margin" for="LoginPassword">
+                                Password
+                            </label>
+                            <input required="" type="password" class="form-control" id="LoginPassword" name="LoginPassword" />
+                        </div>
+                        <div class="form-group">
+                            <a style="padding: 0;" class="btn" href="#">Forgot Password ?</a>
+                        </div>
+                        <button type="submit" class="btn btn-success">
+                            Login
+                        </button>
+                    </form>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="OR-element">
+                        OR
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <form action="/SignInSignUp/SignUp" method="post" role="form" name="SignUpForm">
+                        @{
+                            if (ViewData["SignUpMessage"] != null)
+                            {<div class="form-group">
+                                    <label class="Message label-margin" style="color:blue;">
+                                        @ViewData["SignUpMessage"]
+
+                                    </label>
+                                </div>
+                                ViewData["SignUpMessage"] = null;
+                            }
+                        }
+                        <div class="form-group div-top-border">
+                            <label class="label-margin" for="FirstName">
+                                First Name
+                            </label>
+                            <input required="" class="form-control" id="FirstName" name="FirstName" />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label-margin" for="LastName">
+                                Last Name
+                            </label>
+                            <input class="form-control" id="LastName" name="LastName" />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label-margin" for="Mobile">
+                                Mobile
+                            </label>
+                            <input type="tel" required="" class="form-control" id="Mobile" name="Mobile" />
+                        </div>
+                        <div class="form-group">
+                            <label class="label-margin" for="SignUpEmail">
+                                Email
+                            </label>
+                            <input type="email" required="" class="form-control" id="SignUpEmail" name="SignUpEmail" />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            Sign Up
+                        </button>
+                    </form>
+                </div>
+                <div class="col-md-1">
+                </div>
+            </div>
+            <div class="row">
+                <h2></h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    jQuery(function ($) {
+        $(".Message").fadeTo(15000, 1).fadeOut(1000);
+    });
+</script>

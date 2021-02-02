@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="./images/AlFazal.png" type="image/gif" sizes="32x32">
+    <title>AlFazal Rent A Car </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Rent A Car,rent a car,AlFazal," />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="~/css/owl.carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/lightbox.css">
+    <link type="text/css" rel="stylesheet" href="~/css/cm-overlay.css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Sintony:400,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <link href="//cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body>
+    <div id="MAIN_BODY_DIV">
+
+        <!-- banner -->
+        <div class="w3l_banner">
+            <div class="w3_bandwn">
+                <div class="container">
+                    <div class="col-md-3 w3_l">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@AlFazal.com</a>
+                    </div>
+                    <div class="col-md-6 w3_c">
+                        <i class="fa fa-phone" aria-hidden="true"></i> +456 123 7890
+                    </div>
+                    <div class="col-md-3 w3_r">
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+
+                            <li><a href="~/HOME/Index" class="page-scroll">HOME</a></li>
+                            <li><a href="~/HOME/AboutUs" class="page-scroll">ABOUT</a></li>
+                            <li><a href="~/HOME/Services" class="page-scroll">SERVICES</a></li>
+                            <li><a href="~/HOME/Gallery" class="page-scroll">GALLERY</a></li>
+                            <li><a href="~/HOME/Testimonials" class="page-scroll">TESTIMONIALS</a></li>
+                            <li><a href="~/HOME/Index#contact" class="page-scroll">CONTACT</a></li>
+                            <li><a href="~/SignInSignUp/Index" class="page-scroll">SignIn/SignUp</a></li>
+
+                            <form class="navbar-form navbar-left">
+                                <div class="w3l_frm">
+                                    <form action="/HOME/Search" method="post">
+                                        <button type="submit"><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></button>
+                                        <input type="text" name="search" placeholder="Search" required="">
+                                    </form>
+                                </div>
+                            </form>
+
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+        @RenderBody()
+
+    </div>
+
+    <!-- footer -->
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="list">
+                <div class="col-md-3 wthree_fl">
+                    <a href="#">AlFazal Rent A Car</a>
+                </div>
+
+                <div class="col-md-6 wthree_fc">
+                    <h6> Tipu Road </h6>
+                    <h6> Rawalpindi </h6>
+                    <h6> P K </h6>
+                </div>
+
+                <div class="col-md-3 wthree_fr">
+                    <h6>+92 332 5105343<br />+92 333 5105343</h6>
+                    <h6><a href="mailto:AlFazalRentACarService@gmail.com">AlFazalRentACarService@gmail.com</a></h6>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- //footer -->
+    <div class="copyright">
+        <div class="container">
+            <p>© 2020 AlFazal Rent A Car Service. All rights reserved </p>
+        </div>
+    </div>
+
+    <script src="~/js/jquery.min.js"></script>
+
+    <script src="//cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+
+    <script src="~/js/jquery.easing.min.js"></script>
+
+    <script src="~/js/move-top.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/grayscale.js"></script>
+    <script src="~/js/SmoothScroll.min.js"></script>
+    <!-- flexSlider -->
+    <script src="~/js/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+                items: 2,
+                itemsDesktop: [800, 2],
+                itemsDesktopSmall: [414, 1],
+                lazyLoad: true,
+                autoPlay: true,
+                navigation: true,
+
+                navigationText: false,
+                pagination: true,
+
+            });
+
+        });
+    </script>
+
+    <!-- //flexSlider -->
+    <!-- /gallery -->
+    <script src="~/js/jquery.tools.min.js"></script>
+    <script src="~/js/jquery.mobile.custom.min.js"></script>
+    <script src="~/js/jquery.cm-overlay.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/css/jquery.datetimepicker.css" />
+    <script src="~/js/jquery.datetimepicker.full.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.cm-overlay').cmOverlay();
+        });
+    </script>
+    <!-- //gallery -->
+    <!-- Move-to-top-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+            jQuery('#datetimepicker').datetimepicker();
+        });
+    </script>
+    <!--/Move-to-top-->
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

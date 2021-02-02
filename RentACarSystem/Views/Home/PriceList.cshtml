@@ -1,0 +1,105 @@
+﻿<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $(function () {
+        jQuery.noConflict();
+        $("#accordion")
+            .accordion({
+                header: "> div > h3"
+            })
+            .sortable({
+                axis: "y",
+                handle: "h3",
+                stop: function (event, ui) {
+                    // IE doesn't register the blur when sorting
+                    // so trigger focusout handlers to remove .ui-state-focus
+                    ui.item.children("h3").triggerHandler("focusout");
+
+                    // Refresh accordion to handle new order
+                    $(this).accordion("refresh");
+                }
+            });
+    });
+</script>
+
+<div class="container">
+    <div class="tittle-agileinfo">
+        <h2 style="color:black;">Price List</h2>
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+            <div id="accordion" style="font-size: 2em;">
+                <div class="group">
+                    <h3>Honda City</h3>
+                    <div>
+                        <p style="float:left;">Rawalpindi</p>
+                        <p style="float:right;">Rs. 1000</p>
+                        <br />
+                        <p style="float:left;">Islamabad</p>
+                        <p style="float:right;">Rs. 2000</p>
+                        <br />
+                        <p style="float:left;">Lahore</p>
+                        <p style="float:right;">Rs. 3000</p>
+                    </div>
+                </div>
+                <div class="group">
+                    <h3>Honda Civic</h3>
+                    <div>
+                        <p style="float:left;">Rawalpindi</p>
+                        <p style="float:right;">Rs. 1000</p>
+                        <br />
+                        <p style="float:left;">Islamabad</p>
+                        <p style="float:right;">Rs. 2000</p>
+                        <br />
+                        <p style="float:left;">Lahore</p>
+                        <p style="float:right;">Rs. 3000</p>
+                    </div>
+                </div>
+                <div class="group">
+                    <h3>Corolla XLI</h3>
+                    <div>
+                        <p style="float:left;">Rawalpindi</p>
+                        <p style="float:right;">Rs. 1000</p>
+                        <br />
+                        <p style="float:left;">Islamabad</p>
+                        <p style="float:right;">Rs. 2000</p>
+                        <br />
+                        <p style="float:left;">Lahore</p>
+                        <p style="float:right;">Rs. 3000</p>
+                    </div>
+                </div>
+                <div class="group">
+                    <h3>Corolla GLI</h3>
+                    <div>
+                        <p style="float:left;">Rawalpindi</p>
+                        <p style="float:right;">Rs. 1000</p>
+                        <br />
+                        <p style="float:left;">Islamabad</p>
+                        <p style="float:right;">Rs. 2000</p>
+                        <br />
+                        <p style="float:left;">Lahore</p>
+                        <p style="float:right;">Rs. 3000</p>
+                    </div>
+                </div>
+                <div class="group">
+                    <h3>Corolla YARIS</h3>
+                    <div>
+                        <p style="float:left;">Rawalpindi</p>
+                        <p style="float:right;">Rs. 1000</p>
+                        <br />
+                        <p style="float:left;">Islamabad</p>
+                        <p style="float:right;">Rs. 2000</p>
+                        <br />
+                        <p style="float:left;">Lahore</p>
+                        <p style="float:right;">Rs. 3000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+    </div>
+</div>

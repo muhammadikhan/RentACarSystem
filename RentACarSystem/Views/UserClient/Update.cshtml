@@ -1,0 +1,28 @@
+﻿@model RCS_WebAPI.Models.Order
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Update">
+            <input hidden="hidden" asp-for="Id" class="form-control" />
+            <div class="form-group">
+                <select name="cars" id="cars">
+                    <option value="volvo">Accepted</option>
+                    <option value="saab">Rejected</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update Status" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

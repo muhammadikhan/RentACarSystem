@@ -1,0 +1,120 @@
+﻿<!-- Order Form-->
+<div class="w3ls_frmrt">
+    <div class="container">
+        <h3>Rent-out my Car</h3>
+        <div class="book-form">
+            <form action="/SignInSignUp/Index" method="post">
+                <div class="col-md-4 form-time-w3layouts">
+                    <label><i class="fa fa-calendar" aria-hidden="true"></i>BOOKING DATE</label>
+                    <input id="datetimepicker" type="text" readonly="readonly" placeholder="Name" name="DATE" required="">
+                </div>
+
+                <div class="col-md-4 form-date-w3-agileits">
+                    <label><i class="fa fa-car" aria-hidden="true"></i>CAR</label>
+                    <select class="form-control" name="CAR">
+                        <option>------</option>
+                        <option>Mehran White</option>
+                        <option>Mehran Silver</option>
+                        <option>Mehran Any</option>
+                        <option>Alto White New Shape</option>
+                        <option>Alto Silver New Shape</option>
+                        <option>Alto Any</option>
+                        <option>Cultus White Old Shape</option>
+                        <option>Cultus Silver Old Shape</option>
+                        <option>Cultus White New Shape</option>
+                        <option>Cultus Silver New Shape</option>
+                        <option>Cultus Any</option>
+                        <option>Honda City White</option>
+                        <option>Honda City Silver</option>
+                        <option>Honda City Any</option>
+                        <option>Honda Civic White</option>
+                        <option>Honda Civic Black</option>
+                        <option>Honda Civic Any</option>
+                        <option>Corolla XLI White Old Shape</option>
+                        <option>Corolla XLI Black Old Shape</option>
+                        <option>Corolla XLI Any</option>
+                        <option>Corolla GLI White Old Shape</option>
+                        <option>Corolla GLI Black Old Shape</option>
+                        <option>Corolla GLI Any Old Shape</option>
+                        <option>Corolla XLI White New Shape</option>
+                        <option>Corolla XLI Black New Shape</option>
+                        <option>Corolla XLI Any New Shape</option>
+                        <option>Corolla Yaris White</option>
+                        <option>Corolla Yaris Black</option>
+                        <option>Corolla Yaris Any</option>
+                    </select>
+                </div>
+                
+                <div class="col-md-4 form-left-agileits-w3layouts ">
+                    <label><i class="fa fa-home" aria-hidden="true"></i>BOOKING</label>
+                    <select class="form-control" name="BOOKING">
+                        <option>Per Hour</option>
+                        <option>Daily</option>
+                        <option>Weekly</option>
+                        <option>Monthly</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4 form-date-w3-agileits">
+                    <label><i class="fa fa-map-marker" aria-hidden="true"></i>From</label>
+                    <select class="form-control" name="CITYFrom">
+                        <option value="------">------</option>
+                        <option>Islamabad</option>
+                        <option>Rawalpindi</option>
+                        <option>Faisalabad</option>
+                        <option>Sahiwal</option>
+                        <option>Attock</option>
+                        <option>Vehari</option>
+                        <option>Wah</option>
+                        <option>Kashmir</option>
+                        <option>Sargodah</option>
+                        <option>Sakhar</option>
+                        <option>Multan</option>
+                        <option>Lalamosa</option>
+                        <option>Gilgit</option>
+                        <option>Sawat</option>
+                        <option>Peshawar</option>
+                        <option>Lahore</option>
+                        <option>Karachi</option>
+                    </select>
+                </div>
+                <div class="col-md-4 form-date-w3-agileits">
+                    <label><i class="fa fa-map-marker" aria-hidden="true"></i>To</label>
+                    <select class="form-control" name="CITYTo">
+                        <option value="Any">Any</option>
+                        <option>Islamabad</option>
+                        <option>Rawalpindi</option>
+                        <option>Faisalabad</option>
+                        <option>Multan</option>
+                        <option>Gilgit</option>
+                        <option>Sawat</option>
+                        <option>Peshawar</option>
+                        <option>Lahore</option>
+                        <option>Karachi</option>
+                    </select>
+                </div>
+
+
+
+                <div class="col-md-4 form-left-agileits-submit">
+                    <input type="submit" value="Make my Car available for Rent-out">
+                </div>
+                <br />
+                <br />
+                <div class="col-md-12 form-left-agileits-submit">
+                    @{
+                        string message = "Select Booking Date and other details";
+                        if (TempData["Message"] != null)
+                        {
+                            message = TempData["Message"].ToString();
+                            TempData["Message"] = null;
+                        }
+                        <div style="color: aqua;font-size: 18px;">@message</div>
+                    }
+                </div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- /Order Form-->

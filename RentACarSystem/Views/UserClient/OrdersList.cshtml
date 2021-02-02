@@ -1,0 +1,80 @@
+﻿@model IEnumerable<RCS_WebAPI.Models.OrderModel>
+<div class="row">
+    <div class="col-md-12">
+        <br />
+        <br />
+        <table class="table" id="myTable">
+            <thead>
+                <tr>
+                    <th>
+                        Booking Date
+                    </th>
+                    <th>
+                        Car
+                    </th>
+                    <th>
+                        From
+                    </th>
+                    <th>
+                        To
+                    </th>
+                    <th>
+                        Booking Type
+                    </th>
+                    <th>
+                        Rate
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Shop (Showroom or Driver)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    @if (item.order.Status == "Available")
+                    {
+                        <tr>
+                            <td>
+                                @item.order.BookingDateTime
+                            </td>
+                            <td>
+                                @item.order.Car
+                            </td>
+                            <td>
+                                @item.order.LocationFrom
+                            </td>
+                            <td>
+                                @item.order.LocationTo
+                            </td>
+                            <td>
+                                @item.order.BookingType
+                            </td>
+                            <td>
+                                @item.order.BookingRate
+                            </td>
+                            <td>
+                                @item.order.Status
+                            </td>
+                            <td>
+                                @item.driver_userLogin.FirstName&nbsp;@item.driver_userLogin.LastName
+                            </td>
+                        </tr>
+                        }
+                    }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //jQuery.noConflict();
+    $(document).ready(function () {
+        //<input name="Id" value="item.order.Id" hidden="hidden" />
+        $('#myTable').DataTable();
+        //swal("Please wait...", "User Registration is in process.", "warning");
+    });
+</script>

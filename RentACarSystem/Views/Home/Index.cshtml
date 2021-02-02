@@ -1,0 +1,93 @@
+﻿<div class="w3l_banner_main">
+    <div class="w3l_bandwn_main">
+        <h2>Welcome to AlFazal Rent A Car</h2>
+        <div class="about-p text-center">
+            <span class="sub-title"></span>
+            <span class="fa fa-star" aria-hidden="true"></span>
+            <span class="sub-title"></span>
+        </div>
+        <h3>Cars for Rent</h3>
+        <div class="agile_dwng">
+            <a href="#" data-toggle="modal" data-target="#myModal">Read More </a>
+            <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Rent A Car Services</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="images/modal.jpg" class="img-responsive" alt="tfg">
+                            <p>We ensure to provide quality services to both our clients, corporate as well as consumers. The core focus of AlFazal Rent A Car is to provide the best Rent A Car and rent a car services at reasonable times at prices so that our customers can focus on their work instead of dealing with their Rent A Car baskets. If you too are fed up with this time-consuming task, get in touch with us today and we will take care of all your Rent A Car and rent a car needs. Contact us today!</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@*@Html.Partial("Booking")*@
+@Html.Partial("AboutUs")
+@Html.Partial("Services")
+@Html.Partial("Gallery")
+@Html.Partial("Testimonials")
+
+<!-- Contact -->
+<div class="contact" id="contact">
+    <div class="container">
+        <div class="agile-contact-grids">
+            <h3>Contact</h3>
+            <div class="col-md-6 agile-contact-left">
+                <div class="agileits-map">
+
+                </div>
+                <div class="map-grid">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387142.8400948023!2d-74.25819082602831!3d40.70583163923578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1470295981376" height="500" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-6 agile-contact-right">
+                <div class="contact-form">
+                    <form action="/Home/SendMessage" method="post">
+                        <div class="styled-input agile-styled-input-top">
+                            <div class="w3_conl">
+
+                                <input type="text" name="text" placeholder="Name" required="">
+
+                                <span></span>
+                            </div>
+
+                            <div class="w3_conr">
+
+                                <input type="email" name="Email" placeholder="Email" required="">
+
+                                <span></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="styled-input">
+
+                            <input type="text" name="Subject" placeholder="Subject" required="">
+
+                            <span></span>
+                        </div>
+                        <div class="styled-input">
+                            <textarea name="Message" placeholder="Message" required=""></textarea>
+                            <span></span>
+                        </div>
+                        <input type="submit" value="SEND">
+                    </form>
+                </div>
+            </div>
+
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>

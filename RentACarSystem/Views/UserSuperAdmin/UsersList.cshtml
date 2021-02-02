@@ -1,0 +1,145 @@
+﻿@model IEnumerable<RCS_WebAPI.Models.UserLogin>
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <h3 class="text-center">
+                Shops and Customers List
+            </h3>
+            <div class="div-bottom-border">
+            </div>
+            <a class="btn btn-success pull-right " onclick="loadPartialView('UsersList','UserInsert')">
+                Add New Shops or Customers
+            </a>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <br />
+                <br />
+                <table class="table" id="myTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.UserName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Status)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Type)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Gender)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Mobile)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Landline)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+            <tr style="cursor:pointer;" onclick="loadPartialView('UsersList','UserEdit/@item.Id')">
+                @Html.HiddenFor(modelItem => item.Id)
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mobile)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Landline)
+                </td>
+            </tr>}
+                    </tbody>
+                </table>
+                <div id="dialog" style="display: none;">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/sweetalert.min.js"></script>
+<link href="~/css/sweetalert.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    //jQuery.noConflict();
+    $(document).ready(function () {
+        $('#myTable').DataTable();
+        swal("Please wait...", "Hello.", "warning");
+    });
+</script>
+
+
+
+@*function Edit(_id, _title) {
+            swal({
+        title: _title,
+        text: "Are you sure to Edit this User?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "Green",
+        confirmButtonText: "Yes",
+        cancelButtonText: "No",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    },
+    function (isConfirm) {
+        if (isConfirm) {
+            swal("Please wait...", "User Registration is in process.", "warning");
+            /////////////////////////////////////////////////////////////////////////////////////////////
+            try {
+
+                var _URL = '@Url.Action("RegisterUser", "UserRegistration")/' + OCID;
+
+                $.ajax({
+                    type: "GET",
+                    url: _URL,
+                    contentType: "application/json;",
+                    success: function (data) {
+                        //debugger;
+                        if (data.result == "true") {
+    swal("User Registered.", UserInformation + " Successfully Registered. \n" + data.msg + "\n(Page will reload automatically now)", "success");
+    setTimeout(location.reload.bind(location), 3000);
+                        }
+                        else if (data.result == "false") {
+    swal("User Registation Failed.", data.msg + "\n(Page will reload automatically now)", "error");
+    setTimeout(location.reload.bind(location), 5000);
+                        }
+                        else {
+    swal("Oops", "Something went wrong. Please try later.\n(Page will reload automatically now)", "error");
+    setTimeout(location.reload.bind(location), 3000);
+                        }
+                    },
+                    error: function (data) {
+                        swal("Unable to register User.", "(Page will reload automatically now)", "error");
+                        location.reload();
+                    }
+                });
+
+            } catch (e) {
+                location.reload();
+            }
+
+            /////////////////////////////////////////////////////////////////////////////////////////////
+
+        }
+                });
+        }*@

@@ -1,0 +1,90 @@
+﻿@model RCS_WebAPI.Models.UserLogin
+<div class="row">
+    <h3 class="text-center">
+        Create a new Shop or Customer
+    </h3>
+    <div class="div-bottom-border">
+    </div>
+</div>
+
+<div class="row">
+    <form asp-action="UserInsert">
+        <div style="color: navy;border:none;" class="col-md-12">
+            <div class="col-md-4">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input style="display:none;" asp-for="Id" class="form-control" />
+                <div class="form-group">
+                    <label asp-for="UserName" class="control-label"></label>
+                    <input style="color:black; border:none;" asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input style="color:black; border:none;" asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Type" class="control-label"></label>
+                    <input style="color:black; border:none;" asp-for="Type" class="form-control" />
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Status" class="control-label"></label>
+                    <input style="color:black; border:none;" asp-for="Status" class="form-control" />
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="Gender" class="control-label"></label>
+                    <input style="color:black; border:none;" asp-for="Gender" class="form-control" />
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label"></label>
+                    <input style="color:black; border:none;" asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label"></label>
+                    <input style="color:black; border:none;" asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Location" class="control-label"></label>
+                    <input style="color:black; border:none;" asp-for="Location" class="form-control" />
+                    <span asp-validation-for="Location" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="Mobile" class="control-label"></label>
+                    <input style="color:black; border:none;" asp-for="Mobile" class="form-control" />
+                    <span asp-validation-for="Mobile" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Landline" class="control-label"></label>
+                    <input style="color:black; border:none;" asp-for="Landline" class="form-control" />
+                    <span asp-validation-for="Landline" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmailAlerts" class="control-label"></label>
+                    <input style="color:black; border:none;" asp-for="EmailAlerts" class="form-control" />
+                    <span asp-validation-for="EmailAlerts" class="text-danger"></span>
+                </div>
+                <div>
+                    <input type="submit" value="Create" class="btn btn-success" />
+                    &nbsp;
+                    <div class="btn btn-danger" onclick="loadPartialView('UsersList','UsersList')">
+                        Back to list
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
