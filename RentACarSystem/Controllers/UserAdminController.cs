@@ -10,7 +10,6 @@ namespace RentACarSystem.Controllers
 {
     public class UserAdminController : Controller
     {
-      
         public ActionResult Index(string OrderNumber)
         {
             ViewData["Name"] = "ADMIN";
